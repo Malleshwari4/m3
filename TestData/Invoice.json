@@ -1,0 +1,10 @@
+{
+    "IName":"Apple",
+    "OrgName":"IBM",
+    "BillAdd":"Gachibowli,Hyd",
+    "ShipAdd":"JNTU,Hyd",
+    "ProdName":"Dell laptop",
+    "Qty":"3",
+    "ListPrice":"43233",
+    "Discount":"3"
+}
