@@ -3,6 +3,6 @@ export async function windowHandling(page,action){
         page.waitForEvent('popup'),
         action
     ])
-    await popup.waitForLoadState()
+    // await popup.waitForLoadState()
     return popup
 }

@@ -2,8 +2,9 @@ import {expect, test} from '@playwright/test'
 import excel from 'exceljs'
 import logindata from '../../TestData/LoginData.json'
 import OppData from '../../TestData/Oppurtunities.json'
+import path from 'node:path'
 
-test.only('Oppurtunity with DDT JSON',async ({page}) => {
+test('Oppurtunity with DDT JSON',async ({page}) => {
 
     await page.goto(logindata.url)
     await page.locator("//input[@name='user_name']").fill(logindata.username)
@@ -27,14 +28,6 @@ test.only('Oppurtunity with DDT JSON',async ({page}) => {
 
     await expect(page.locator("//span[@class='dvHeaderText']")).toContainText(OppData.Oppname)
 
-   //  let OName= await page.locator("//span[@class='dvHeaderText']").textContent()
-   //  console.log(OName);    
-   //  if (OName?.includes('Phones')) {
-   //  console.log('Oppurtunity is created');
-   //  } else {
-   //  console.log('oppurtunity is not created');
-   //  }
-
      //! logout
     await page.locator('//img[@src="themes/softed/images/user.PNG"]').hover()
     await page.locator('//a[text()="Sign Out"]').click()
@@ -48,6 +41,7 @@ test('Oppurtunity with DDT EXCEL',async ({page}) => {
     await page.locator("//input[@name='user_name']").fill(logindata.username)
     await page.locator("//input[@name='user_password']").fill(logindata.password)
     await page.locator('#submitButton').click()
+    await page.getByRole('link',{name:'OPPORTUNITIES'}).click()
     
 
      let book = new excel.Workbook()

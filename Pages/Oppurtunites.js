@@ -6,7 +6,6 @@ export class Opp_Class{
     #CreateOpp
     #Oppname
     #OrgClick
-    #Orgname
     #save
     #OppValidation
 

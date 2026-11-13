@@ -43,7 +43,7 @@ test('Quotes',async ({page}) => {
     await page.locator("(//input[@title='Save [Alt+S]'])[1]").click()
 
     //validating
-    await expect( page.locator("//span[@class='lvtHeaderText']")).toContainText('Invoice1')
+    await expect( page.locator("//span[@class='lvtHeaderText']")).toContainText("Invoice1")
      //! logout
     await page.locator('//img[@src="themes/softed/images/user.PNG"]').hover()
     await page.locator('//a[text()="Sign Out"]').click()

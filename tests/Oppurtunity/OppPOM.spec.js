@@ -6,7 +6,7 @@ import { Opp_Class } from '../../Pages/Oppurtunites'
 import excel from 'exceljs'
 import path from 'node:path'
 
-test('Oppurtunites with POM JSON',async ({page}) => {
+test.only('Oppurtunites with POM JSON',async ({page}) => {
     
     let loginObj= new Login_Class(page)
     await loginObj.launchUrl(loginData.url)
@@ -15,11 +15,12 @@ test('Oppurtunites with POM JSON',async ({page}) => {
     let OppObj= new Opp_Class(page)
     await OppObj.OppClick()
     await OppObj.OppAction(OppData.Oppname,OppData.OrgName)
+    // await OppData.OppValidation(OppData.Oppname)
     
 })
 
 
-test.only('Oppurtunites with POM Excel',async ({page}) => {
+test('Oppurtunites with POM Excel',async ({page}) => {
     test.slow()
     
         let loginObj= new Login_Class(page)

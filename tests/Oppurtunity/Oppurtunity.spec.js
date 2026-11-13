@@ -18,7 +18,7 @@ test('Oppurtunity',async ({page}) => {
 
 await newtab1.waitForLoadState();
 
-    await newtab1.getByRole('link',{name:'QSpidersss'}).click()
+    await newtab1.getByRole('link',{name:'IBM'}).click()
     await page.locator("(//input[@title='Save [Alt+S]'])[1]").click()
 
 
