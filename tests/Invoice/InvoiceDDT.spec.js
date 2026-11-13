@@ -6,7 +6,7 @@ import logindata from '../../TestData/LoginData.json'
 import Invoicedata from '../../TestData/Invoice.json'
 
 
-test.only('Quotes with DDT JSON',async ({page}) => {
+test('Invoice with DDT JSON',async ({page}) => {
   
     await page.goto(logindata.url)
     await page.locator("//input[@name='user_name']").fill(logindata.username)
@@ -59,7 +59,7 @@ test.only('Quotes with DDT JSON',async ({page}) => {
     await page.locator('//img[@src="themes/softed/images/user.PNG"]').hover()
     await page.locator('//a[text()="Sign Out"]').click()
 })
-test('Quotes',async ({page}) => {
+test('Invoice with DDT EXCEL',async ({page}) => {
     test.slow()
     await page.goto('http://localhost:8888/index.php?action=Login&module=Users')
     await page.locator("//input[@name='user_name']").fill('admin')
